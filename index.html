@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vercel 最终测试</title>
+    <style>
+        /* CSS 样式部分 - 直接写在这里，确保一定能加载 */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #0f0c29;
+            background-image: linear-gradient(315deg, #0f0c29 0%, #302b63 74%, #24243e 100%);
+            font-family: 'Arial', sans-serif;
+            color: white;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1s ease-out;
+            max-width: 90%;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #d1d1d1;
+            margin-bottom: 2rem;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #00ff88;
+            color: #004d2a;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            box-shadow: 0 0 15px #00ff8880;
+        }
+
+        button {
+            background: linear-gradient(45deg, #ff0099, #493240);
+            border: none;
+            padding: 15px 30px;
+            color: white;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 0, 153, 0.6);
+        }
+
+        #dynamicText {
+            margin-top: 15px;
+            height: 20px;
+            color: #ff0099;
+            font-weight: bold;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="status-badge">✅ 部署成功</div>
+        <h1>Hello, Vercel!</h1>
+        <p>如果你看到了这个深色背景和光晕，说明你的网站 100% 工作正常。</p>
+        
+        <button onclick="testFunction()">点击测试交互</button>
+        <div id="dynamicText"></div>
+    </div>
+
+    <script>
+        function testFunction() {
+            const textElement = document.getElementById('dynamicText');
+            const now = new Date().toLocaleTimeString();
+            textElement.innerText = "交互测试成功！时间：" + now;
+            textElement.style.color = "#00ff88";
+            console.log("JavaScript is working perfectly.");
+        }
+    </script>
+</body>
+</html>
